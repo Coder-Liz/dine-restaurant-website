@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./img/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Dine Website Challenge</title>
+  </head>
+  <body>
+    <header class="wrapper header">
+      <h2 class="visually-hidden">Header</h2>
+      <a href="/">
+        <img
+          class="logo dine"
+          src="/img/logo.svg"
+          alt="Dine homepage"
+          width="103"
+          height="40"
+        />
+      </a>
+    </header>
+    <main>
+      <section class="wrapper hero booking__hero">
+        <picture class="heroImage fullbleed">
+          <source
+            media="(min-width: 68.75rem)"
+            srcset="/img/booking/hero-bg-desktop@2x.jpg"
+            width="2880"
+            height="1200"
+          />
+          <source
+            media="(min-width: 43.75rem)"
+            srcset="/img/booking/hero-bg-tablet@2x.jpg"
+            width="1536"
+            height="1200"
+          />
+          <img
+            class="booking__image"
+            src="/img/booking/hero-bg-mobile@2x.jpg"
+            alt=""
+            width="750"
+            height="1200"
+          />
+        </picture>
+
+        <h1 class="title booking__title">Reservations</h1>
+        <p class="description booking__description">
+          We can't wait to host you. If you have any special requirements please
+          feel free to call on the phone number below. We'll be happy to
+          accommodate you.
+        </p>
+        <a href="/booking.html" class="button booking__btn">Reserve place</a>
+      </section>
+
+      <section class="wrapper form">
+        <img
+          class="feature__pattern hide-on-mobile booking-pattern"
+          src="/img/patterns/pattern-curve-bottom-right.svg"
+          alt="Decorative curve pattern"
+          width="993"
+          height="320"
+        />
+        <img
+          class="booking__lines hide-on-mobile pattern-lines"
+          src="/img/patterns/pattern-lines.svg"
+          alt="Decorative line pattern"
+          width="160"
+          height="76"
+        />
+
+        <form
+          class="reservation-form has-shadow"
+          id="reservationForm"
+          novalidate
+        >
+          <!-- Name Field -->
+          <div class="input-group">
+            <label for="name" class="visually-hidden">Name</label>
+            <input
+              class="input name has-error"
+              type="text"
+              placeholder="Name"
+              name="name"
+              id="name"
+              required
+              aria-label="Full name"
+            />
+            <span id="nameError" aria-live="polite"></span>
+          </div>
+
+          <!-- Email Field -->
+          <div class="input-group">
+            <label for="email" class="visually-hidden">Email</label>
+            <input
+              class="input email has-error"
+              type="email"
+              placeholder="Email"
+              name="email"
+              id="email"
+              required
+              aria-label="Email address"
+            />
+            <span id="emailError" aria-live="polite"></span>
+          </div>
+
+          <!-- Date Field -->
+          <div class="input-group date-wrapper">
+            <label for="month" class="date-label">Pick a date</label>
+            <div class="date-time">
+              <input
+                class="input month"
+                type="number"
+                id="month"
+                placeholder="MM"
+                min="1"
+                max="12"
+                required
+                aria-label="Month"
+              />
+              <input
+                class="input day"
+                type="number"
+                id="day"
+                placeholder="DD"
+                min="1"
+                max="31"
+                required
+                aria-label="Day"
+              />
+              <input
+                class="input year"
+                type="number"
+                id="year"
+                placeholder="YYYY"
+                min="2023"
+                max="2100"
+                required
+                aria-label="Year"
+              />
+            </div>
+            <span id="dateError" aria-live="polite"></span>
+          </div>
+
+          <!-- Time Field -->
+          <div class="input-group time-wrapper">
+            <label class="time-label">Pick a time</label>
+            <div class="date-time">
+              <input
+                class="input hour"
+                type="number"
+                id="hour"
+                placeholder="09"
+                min="1"
+                max="12"
+                required
+                aria-label="Hour"
+              />
+              <input
+                class="input minute"
+                type="number"
+                id="minute"
+                placeholder="00"
+                min="0"
+                max="59"
+                required
+                aria-label="Minute"
+              />
+              <div class="dropdown">
+                <button
+                  class="dropdown-toggle"
+                  type="button"
+                  id="dropdownButton"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-label="Select AM/PM"
+                >
+                  <span id="selectedValue">AM</span>
+                  <span>
+                    <img
+                      class="rotate"
+                      src="/img/icons/icon-arrow.svg"
+                      alt="Dropdown arrow"
+                      width="18"
+                      height="11"
+                    />
+                  </span>
+                </button>
+                <ul class="dropdown-menu" id="dropdownMenu" role="listbox">
+                  <li
+                    class="dropdown-option selected"
+                    data-value="AM"
+                    role="option"
+                    aria-selected="true"
+                    tabindex="0"
+                  >
+                    <span class="check-icon">
+                      <img
+                        src="/img/icons/icon-check.svg"
+                        alt="Selected"
+                        width="13"
+                        height="11"
+                      />
+                    </span>
+                    AM
+                  </li>
+                  <li
+                    class="dropdown-option"
+                    data-value="PM"
+                    role="option"
+                    aria-selected="false"
+                    tabindex="0"
+                  >
+                    <span class="check-icon">
+                      <img
+                        src="/img/icons/icon-check.svg"
+                        alt="Not selected"
+                        width="13"
+                        height="11"
+                      />
+                    </span>
+                    PM
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <span id="timeError" aria-live="polite"></span>
+          </div>
+
+          <!-- People Count -->
+          <div class="input-group people-count">
+            <label class="visually-hidden" id="peopleLabel"
+              >Number of people</label
+            >
+            <div class="counter-controls">
+              <button
+                type="button"
+                class="count-icon decrement"
+                aria-label="Decrease number of people"
+                aria-controls="peopleCount"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="7" height="3">
+                  <path fill="#9E7F66" d="M6.425 2.977V.601H.629v2.376z" />
+                </svg>
+              </button>
+              <span id="peopleCount" class="num-people" aria-live="polite"
+                >4 people</span
+              >
+              <input type="hidden" name="people" id="peopleInput" value="4" />
+              <button
+                type="button"
+                class="count-icon increment"
+                aria-label="Increase number of people"
+                aria-controls="peopleCount"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="11">
+                  <path
+                    fill="#9E7F66"
+                    d="M6.227 10.156V6.727h3.429V4.342H6.227V.913H3.842v3.429H.413v2.385h3.429v3.429z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            id="submitBtn"
+            class="button submit-btn solid"
+            aria-label="Submit reservation form"
+          >
+            Make Reservation
+          </button>
+        </form>
+      </section>
+    </main>
+    <footer class="wrapper footer bg-dark">
+      <h2 class="visually-hidden">Footer</h2>
+
+      <div class="footer__content">
+        <a class="footer__link" href="/">
+          <img
+            class="logo"
+            src="/img/logo.svg"
+            alt="Dine Homepage"
+            width="103"
+            height="40"
+          />
+        </a>
+
+        <div class="footer__location">
+          <p>Marthwaite, Sedbergh</p>
+          <p>Cumbria</p>
+          <a href="tel:+00441234567">+00 44 123 4567</a>
+        </div>
+
+        <div class="footer__times">
+          <p>Open Times</p>
+          <p>Mon - Fri: 09:00 AM - 10:00 PM</p>
+          <p>Sat - Sun: 09:00 AM - 11:30 PM</p>
+        </div>
+      </div>
+    </footer>
+    <script defer src="/script.js"></script>
+  </body>
+</html>
