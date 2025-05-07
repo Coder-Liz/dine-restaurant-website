@@ -269,7 +269,6 @@
 
     @media (min-width: 43.75rem) {
       grid-template-rows: 452px repeat(4, auto);
-      /* padding-block-end: 87px; */
     }
 
     @media (min-width: 68.75rem) {
@@ -286,10 +285,6 @@
       position: relative;
 
       img {
-        /* @media (max-width: 68.75rem) {
-          width: 43.75rem;
-        } */
-
         @media (max-width: 43.75rem) {
           /* width: 23.438rem; */
           max-height: 46.75rem; /* mobile image height */
