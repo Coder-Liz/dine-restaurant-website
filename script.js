@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---------------- Booking Page Logic ----------------
   if (isBookingPage()) {
+    console.log(window.location.pathname);
+
     const reservationForm = document.getElementById('reservationForm');
     const nameEl = document.getElementById('name');
     const emailEl = document.getElementById('email');
