@@ -78,6 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
         hasError = true;
       }
 
+      console.log('hasError:', hasError);
+
       if (hasError) e.preventDefault();
       else console.log('Form submitted successfully!');
     });
