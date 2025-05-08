@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   console.log('script.js loaded');
+  console.log(window.location.pathname);
 
   // ---------------- Homepage Logic ----------------
   if (isHomepage()) {
@@ -31,8 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---------------- Booking Page Logic ----------------
   if (isBookingPage()) {
-    console.log(window.location.pathname);
-
     const reservationForm = document.getElementById('reservationForm');
     const nameEl = document.getElementById('name');
     const emailEl = document.getElementById('email');
