@@ -187,7 +187,10 @@ function isHomepage() {
 }
 
 function isBookingPage() {
-  return window.location.pathname.endsWith('/booking.html');
+  return (
+    window.location.pathname === '/booking' ||
+    window.location.pathname.endsWith('/booking.html')
+  );
 }
 
 function changeTabs(e) {
