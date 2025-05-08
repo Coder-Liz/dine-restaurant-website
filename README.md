@@ -38,7 +38,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/dine-restaurant-website-dqhrGtrDZB)
 - Live Site URL: [Add live site URL here](https://storied-liger-1c3756.netlify.app/)
 
 ## My process
